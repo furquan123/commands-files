@@ -1,0 +1,44 @@
+ansible installation: step-1
+====================  ====== 
+
+sudo dnf install python3 -y
+
+sudo dnf install ansible -y
+
+hosts file ke andar:
+===================
+
+[dev]
+172.31.14.254 ansible_user=ansible
+
+[test]
+172.31.10.212 ansible_user=ansible
+
+
+sudo dnf install python3-pip -y
+pip3 install --user ansible
+
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+
+python3 --version
+ansible --version
+
+8 commands in all servers: step-2
+=========================  ======
+
+1.useradd ansible
+2.passwd ansible
+3.visudo line:100
+4.vim /etc/ssh/sshd_config line:65
+5.systemctl restart sshd
+6.systemctl status sshd
+7.hostname -i
+8.su - ansible
+
+generate sshkey: step-3
+===============  ======
+
+ssh-keygen =in main server
+ssh-copy-id ansible@node private ip address
