@@ -1,0 +1,19 @@
+dnf install java-21-amazon-corretto -y
+
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2026.key
+
+yum install jenkins git maven -y
+
+systemctl start jenkins
+
+systemctl status jenkins
+
+sudo mount -o remount,size=2G /tmp
+
+
+Free Space Threshold: 1GiB ko change karke 200MiB karo.
+Free Space Warning Threshold: 2GiB ko change karke 300MiB karo.
+Phir Save par click karo.
+
